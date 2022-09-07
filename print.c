@@ -43,7 +43,7 @@ void print_error(char *error)
 {
 while (*error != '\0')
 {
-  write(STDERR_FILENO, error, 3);
-  error++;
+	write(STDERR_FILENO, error, 3);
+	error++;
 }
 }

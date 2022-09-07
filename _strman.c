@@ -38,17 +38,15 @@ return (dest = '\0');
  */
 char *_strcat(char *dest, const char *src)
 {
-	int i, l;
+int i, l;
+i = 0;
+l = 0;
+while (dest[i++])
+	l++;
 
-	i = 0;
-	l = 0;
-	while (dest[i++])
-		l++;
-
-	for (i = 0; src[i]; i++)
-		dest[l++] = src[i];
-
-	return (dest);
+for (i = 0; src[i]; i++)
+	dest[l++] = src[i];
+return (dest);
 }
 /**
  * _strncmp - compares n charas in two strings

@@ -1,15 +1,15 @@
 #include "shell.h"
 /**
- *
+ * prompt - prints the prompt on the screen
  */
 void prompt(void)
 {
-print("$ ");  
+print("$ ");
 }
 /**
- *
- *
- *
+ * interactive - checks mode of interaction
+ * Returns: 0 if interation is pipe.
+ * otherwise return 1 if interation mode is not pipe.
  */
 int interactive(void)
 {

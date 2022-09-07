@@ -1,32 +1,32 @@
 #include "shell.h"
 /**
- *
- *
- *
+ * new_env - returns the current env variables.
+ * @env: The env variable
+ * Return: double pointer to env variable.
  */
 char **new_env(char **env)
 {
-int c = 0, len_env;
-char **tmp;
-for (c = 0; env[c]; c++)
+int count = 0, var_len;
+char **temp;
+for (count = 0; env[count]; count++)
 ;
-len_env = c;
-tmp = malloc(sizeof(char *) * (len_env + 1));
-for (c = 0; c < len_env; c++)
+var_len = count;
+temp = malloc(sizeof(char *) * (var_len + 1));
+for (count = 0; count < var_len; count++)
 {
-tmp[c] = _strdup(env[c]);
-if (tmp[c] == NULL)
+temp[count] = _strdup(env[count]);
+if (temp[count] == NULL)
 {
 perror("strdup");
 exit(EXIT_FAILURE);
 }
 }
-tmp[c] = NULL;
-return (tmp);
+temp[count] = NULL;
+return (temp);
 }
 /**
- *
- *
+ * free_env - free env varible's memory
+ *@env: env varible
  */
 void free_env(char **env)
 {
@@ -36,10 +36,10 @@ free(env[c]);
 free(env);
 }
 /**
- *
- *
- *
- *
+ * _memset - starts memory array
+ * @s: memory of an array
+ * @c: The starting value
+ * @n: Requred memory
  */
 void _memset(void *s, int c, size_t n)
 {

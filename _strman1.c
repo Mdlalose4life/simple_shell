@@ -69,24 +69,22 @@ return (dest[j] - src[j]);
  */
 char *_strdup(char *str)
 {
-	char *dest;
-	int i;
-	int new = 0;
-
-	if (str == NULL)
-	return (NULL);
-	for (i = 0; str[i]; i++)
-		new++;
-	dest = malloc(sizeof(char) * (new + 1));
-	if (dest == NULL)
-	{
-	perror("strdup");
-	return (NULL);
-	}
-	
-	for (i = 0; str[i]; i++)
-		dest[i] = str[i];
-	dest[new] = '\0';
-	return (dest);
+char *dest;
+int i;
+int new = 0;
+if (str == NULL)
+return (NULL);
+for (i = 0; str[i]; i++)
+	new++;
+dest = malloc(sizeof(char) * (new + 1));
+if (dest == NULL)
+{
+perror("strdup");
+return (NULL);
+}	
+for (i = 0; str[i]; i++)
+	dest[i] = str[i];
+dest[new] = '\0';
+return (dest);
 }
  

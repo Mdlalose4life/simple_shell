@@ -5,21 +5,22 @@
 #include <signal.h>
 #include <errno.h>
 /**
- *
- *
- *
- *
+ * main - Central and entry point for this project.
+ * @ac: Argument count.
+ * @av: Argument vectore.
+ * @env: environments variable passed to child proccess.
+ * Return: 0 Always
  */
 int main(int ac __attribute__ ((unused)), char *av[], char **env)
 {
 FILE *stream = 0;
-char *ptr_line = NULL;                          
+char *ptr_line = NULL;
 char *command = NULL;
 size_t slen = 0;
 ssize_t input = 0;
 stream = stdin;
-env = current_env(env);
-if (signal(SIGINT, interrupt_handler) == SIG_IGN)
+env = new_env(env);
+if (signal(SIGINT, punctuate_handler) == SIG_IGN)
 signal(SIGINT, SIG_IGN);
 while (1)
 {

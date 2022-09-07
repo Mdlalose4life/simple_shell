@@ -1,7 +1,7 @@
 #include "shell.h"
 /**
- *
- *
+ * ESC_comments - escapes the comment sections
+ * @lineptr: Pointer to the line.
  */
 void ESC_comments(char *lineptr)
 {
@@ -9,13 +9,15 @@ const char s[] = " ";
 strtok(lineptr, s);
 }
 /**
- *
- *
- *
- *
- *
+ * exec_builtins - executes builtin commands
+ * @cmd: the input commands
+ * @lineptr: line input pointer
+ * @env: triple pointer to env
+ * Retun: 0 if command is builtin
+ * otherwise 1
  */
-char exec_builtins(char *cmd, char *lineptr __attribute__ ((unused)), char ***env)
+char exec_builtins(char *cmd, char *lineptr __attribute__
+((unused)), char ***env)
 {
 int exitn, len_arg;
 char *arg = NULL;
@@ -25,7 +27,7 @@ arg = strtok(NULL, " \n");
 if (arg != NULL)
 {
 len_arg = _strlen(arg);
-if (valid_exitarg(arg, len_arg) == 1)
+if (right_exitarg(arg, len_arg) == 1)
 {
 exitn = _atoin(arg, len_arg);
 free_env(*env);
@@ -62,11 +64,12 @@ return (0);
 return (1);
 }
 /**
- *
- * 
- * 
- * 
- * 
+ * cmd_execution - executes the builtin commands
+ * @cmd: the commands from the user.
+ * @lineptr: Pointer to the user command
+ * @env: triple pointer to the env
+ * Return: 0 success,
+ * return 1 if the is an error.
  */
 char cmd_execution(char *cmd, char *lineptr, char ***env)
 {

@@ -1,9 +1,9 @@
 #include "shell.h"
 #include <unistd.h>
 /**
- *_setenv
- * 
- * 
+ *_setenv - sets env variable
+ * @env: The env variables
+ * Return: 0. Success
  */
 int _setenv(char ***env)
 {
@@ -23,11 +23,11 @@ return (1);
 return (_setenv_fun(env, env_var, env_val));
 }
 /**
- * 
- *
- *
- *
- *
+ * _setenv_fun - helps setting the environment.
+ * @env_var: first env variable
+ * @env_varl: second env vaarible
+ * @env: the env variabes
+ * Return: 0 success
  */
 int _setenv_fun(char ***env, char *env_var, char *env_val)
 {
@@ -57,10 +57,11 @@ putch('\n');
 return (0);
 }
 /**
- *
- *
- *
- *
+ * grow_env - grwos the current env
+ * @env: the current env.
+ * @env_size: the size of the env minus \0.
+ * Return: NULL if there is memory errors
+ * otherwise the grown env.
  */
 char **grow_env(char **env, int env_size)
 {
@@ -77,10 +78,10 @@ new_env[i] = env[i];
 return (new_env);
 }
 /**
- *
- *
- *
- *
+ * new_path_str - New string
+ * env_val: env variable name
+ * env_val: env variable value
+ * Return: path to the new string.
  */
 char *new_path_str(char *env_var, char *env_val)
 {
