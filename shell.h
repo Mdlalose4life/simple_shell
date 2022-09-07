@@ -23,6 +23,7 @@ int _strlen(const char *s);
 char *_strcat(char *dest, const char *src);
 char *_strcpy(char *dest, const char *src);
 char *_strdup(char *str);
+char *_strdup(char *str);
 
 void prompt(void);
 void put_grid(char **grid);
@@ -45,6 +46,8 @@ int _sstrcmp(const char *s1, const char *s2);
 int _maximum(int x, int y);
 int _minimum(int x, int y);
 int _strcmp(const char *dest, const char *src);
+void interrupt_handler(int signum);
+
 
 char **new_env(char **env);
 void free_env(char **env);

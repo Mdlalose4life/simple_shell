@@ -12,7 +12,6 @@
  */
 int main(int ac __attribute__ ((unused)), char *av[], char **env)
 {
-void interrupt_handler(int);
 FILE *stream = 0;
 char *ptr_line = NULL;                          
 char *command = NULL;
