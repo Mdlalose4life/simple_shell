@@ -5,8 +5,7 @@
  */
 void esc_comments(char *lineptr)
 {
-const char s[] = " ";
-strtok(lineptr, s);
+strtok(lineptr, "#");
 }
 /**
  * exec_builtins - executes builtin commands
