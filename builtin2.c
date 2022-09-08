@@ -80,15 +80,15 @@ b = 1;
 for (i = 0; i < len; i++)
 {
 d = s[len - i - 1] - 48;
-r += d*b;
+r += d *b;
 b = b * 10;
 }
 return (r);
 }
 /**
- * ihelp - immitates the bultin help commands
+ * _help - immitates the bultin help commands
  */
-void ihelp(void)
+void _help(void)
 {
 print("SUPPORTED COMMANDS\n");
 print("#\t\t\t\tAdd a comment\n");

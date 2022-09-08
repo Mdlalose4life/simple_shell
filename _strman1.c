@@ -81,10 +81,9 @@ if (dest == NULL)
 {
 perror("strdup");
 return (NULL);
-}	
+}
 for (i = 0; str[i]; i++)
 	dest[i] = str[i];
 dest[new] = '\0';
 return (dest);
 }
- 

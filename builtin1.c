@@ -11,13 +11,13 @@ char *env_var, *env_val;
 env_var = strtok(NULL, " \n");
 if (env_var == NULL)
 {
-perror("missing argument\n");
+perror("No argument\n");
 return (1);
 }
 env_val = strtok(NULL, " \n");
 if (env_val == NULL)
 {
-perror("missing value\n");
+perror("No value\n");
 return (1);
 }
 return (_setenv_fun(env, env_var, env_val));

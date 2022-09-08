@@ -39,7 +39,7 @@ char *new_path_str(char *env_var, char *env_val);
 int _unsetenv(char ***env);
 void recoil_env(char ***env, int del);
 int _atoin(const char *s, int len);
-void ihelp(void);
+void _help(void);
 void punctuate_handler(int signum);
 
 int _sstrcmp(const char *s1, const char *s2);

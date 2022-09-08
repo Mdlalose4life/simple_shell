@@ -13,7 +13,7 @@ strtok(lineptr, s);
  * @cmd: the input commands
  * @lineptr: line input pointer
  * @env: triple pointer to env
- * Retun: 0 if command is builtin
+ * Return: 0 if command is builtin
  * otherwise 1
  */
 char exec_builtins(char *cmd, char *lineptr __attribute__
@@ -46,9 +46,9 @@ if (_strncmp(cmd, "env", 4) == 0)
 get_grid(*env);
 return (0);
 }
-if (_strncmp(cmd, "help", 5) == 0)
+if (_strncmp(cmd, "_help", 5) == 0)
 {
-ihelp();
+_help();
 return (0);
 }
 if (_strncmp(cmd, "setenv", 7) == 0)
@@ -79,7 +79,7 @@ pid_t pid = fork();
 if (pid == -1)
 return (1);
 if (pid != 0)
-{ 
+{
 wait(&status);
 }
 else
