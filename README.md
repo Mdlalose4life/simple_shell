@@ -1,5 +1,5 @@
-# README for Simple Shell.
- * This is a readme for simple shel
+# Lenix simple shell.
+## This is a readme for simple shell
  * Authozied Functions and macros
  * access (man 2 access)
  * chdir (man 2 chdir)
@@ -33,7 +33,7 @@
  * wait4 (man 2 wait4)
  * write (man 2 write)
 
-# Project requements.
+# Project requiments.
 * [0] README, manm AUTHORS file.
 * [1] Betty complient
 * [2] Display a prompt
