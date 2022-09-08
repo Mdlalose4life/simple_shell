@@ -85,14 +85,3 @@ b = b * 10;
 }
 return (r);
 }
-/**
- * _help - immitates the bultin help commands
- */
-void _help(void)
-{
-print("SUPPORTED COMMANDS\n");
-print("#\t\t\t\tAdd a comment\n");
-print("env\t\t\t\tPrint the environment variables.\n");
-print("exit [n]\t\t\tExit the shell.\n");
-print("help\t\t\t\tDisplay this help.\n");
-}
