@@ -22,11 +22,11 @@ return (_strlen++);
  */
 char *_strcpy(char *dest, const char *src)
 {
-int i = 0;
-while (src[i] != '\0')
+int index = 0;
+while (src[index] != '\0')
 {
-  dest[i] = src[i];
-  i++;
+	dest[index] = src[index];
+	index++;
 }
 return (dest = '\0');
 }
@@ -43,7 +43,6 @@ i = 0;
 l = 0;
 while (dest[i++])
 	l++;
-
 for (i = 0; src[i]; i++)
 	dest[l++] = src[i];
 return (dest);

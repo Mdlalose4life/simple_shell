@@ -1,9 +1,9 @@
 #include "shell.h"
 /**
- * ESC_comments - escapes the comment sections
+ * esc_comments - escapes the comment sections
  * @lineptr: Pointer to the line.
  */
-void ESC_comments(char *lineptr)
+void esc_comments(char *lineptr)
 {
 const char s[] = " ";
 strtok(lineptr, s);
@@ -43,7 +43,7 @@ exit(EXIT_SUCCESS);
 }
 if (_strncmp(cmd, "env", 4) == 0)
 {
-put_grid(*env);
+get_grid(*env);
 return (0);
 }
 if (_strncmp(cmd, "help", 5) == 0)
@@ -64,16 +64,16 @@ return (0);
 return (1);
 }
 /**
- * cmd_execution - executes the builtin commands
+ * command_execution - executes the builtin commands
  * @cmd: the commands from the user.
  * @lineptr: Pointer to the user command
  * @env: triple pointer to the env
  * Return: 0 success,
  * return 1 if the is an error.
  */
-char cmd_execution(char *cmd, char *lineptr, char ***env)
+char command_execution(char *cmd, char *lineptr, char ***env)
 {
-char *cargv[BUF_SIZE], *full_exec_path = NULL;
+char *cargv[BUFFER_SIZE], *full_execv_path = NULL;
 int index, status;
 pid_t pid = fork();
 if (pid == -1)
@@ -85,24 +85,24 @@ wait(&status);
 else
 {
 cargv[0] = cmd;
-for (index = 0; index < BUF_SIZE - 1; index++)
+for (index = 0; index < BUFFER_SIZE - 1; index++)
 {
 if (cargv[index] == NULL)
 break;
 cargv[index + 1] = strtok(NULL, " \n");
 }
 if (cmd[0] == '.')
-full_exec_path = cmd;
+full_execv_path = cmd;
 else
 {
-full_exec_path = get_cmd_fpath(cmd, *env);
-if (full_exec_path == NULL)
+full_execv_path = find_command_path(cmd, *env);
+if (full_execv_path == NULL)
 {
 free(lineptr);
 return (1);
 }
 }
-if (execve(full_exec_path, cargv, *env) == -1)
+if (execve(full_execv_path, cargv, *env) == -1)
 {
 free(lineptr);
 return (1);

@@ -1,14 +1,14 @@
 #include "shell.h"
 
 /**
- * get_cmd_fpath - Identifies the exacutable program in path
+ * find_command_path - Finds the exacutable program in path
  * @cmd: The command to be searched as an exacutable
  * @env: Environments contents.
  * Return: if an executable is found; return full path
  * Return NULL if there is memory error
  * otherwise return relative path.
  */
-char *get_cmd_fpath(char *cmd, char **env)
+char *find_command_path(char *cmd, char **env)
 {
 unsigned long int i = 0, j = 0, full_cmd_len = 0;
 char *PATH_value = NULL, *token = NULL, *full_cmd_path = NULL;

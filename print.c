@@ -18,21 +18,21 @@ void print(char *str)
 {
 while (*str != '\0')
 {
-putch(*str);
-str++;
+	putch(*str);
+	str++;
 }
 }
 /**
- * put_grid - prints in a grid
+ * get_grid - prints in a grid
  * @grid: pointer of pointer to a value
  */
-void put_grid(char **grid)
+void get_grid(char **grid)
 {
 int index;
 for (index = 0; grid[index] != NULL; index++)
 {
-print(grid[index]);
-putch('\n');
+	print(grid[index]);
+	putch('\n');
 }
 }
 /**

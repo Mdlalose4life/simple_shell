@@ -9,8 +9,7 @@ char **new_env(char **env)
 int count = 0, var_len;
 char **temp;
 for (count = 0; env[count]; count++)
-;
-var_len = count;
+	var_len = count;
 temp = malloc(sizeof(char *) * (var_len + 1));
 for (count = 0; count < var_len; count++)
 {
@@ -30,9 +29,9 @@ return (temp);
  */
 void free_env(char **env)
 {
-int c;
-for (c = 0; env[c]; c++)
-free(env[c]);
+int index;
+for (index = 0; env[index]; index++)
+free(env[index]);
 free(env);
 }
 /**

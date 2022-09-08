@@ -5,7 +5,7 @@
 #include <signal.h>
 #include <errno.h>
 /**
- * main - Central and entry point for this project.
+ * main - Central and entry point for this program.
  * @ac: Argument count.
  * @av: Argument vectore.
  * @env: environments variable passed to child proccess.
@@ -41,11 +41,11 @@ return (EXIT_SUCCESS);
 perror(av[0]);
 return (EXIT_FAILURE);
 }
-ESC_comments(ptr_line);
+esc_comments(ptr_line);
 command = strtok(ptr_line, " \n");
 if (command != NULL && exec_builtins(command, ptr_line, &env))
 {
-if (cmd_execution(command, ptr_line, &env))
+if (command_execution(command, ptr_line, &env))
 {
 free_env(env);
 perror(av[0]);
